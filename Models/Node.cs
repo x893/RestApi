@@ -1,13 +1,17 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.Collections.Generic;
 
-namespace RestApi.Models
+namespace RestApi.Models;
+
+public partial class Node
 {
-	public class Node
-	{
-		[Key]
-		public int Id { get; set; }
-		public int? ParentId { get; set; }
-		[MaxLength(50)]
-		public string? Name { get; set; }
-	}
+    public int Id { get; set; }
+
+    public int? ParentId { get; set; }
+
+    public string? Name { get; set; }
+
+    public virtual ICollection<Node> InverseParent { get; set; } = new List<Node>();
+
+    public virtual Node? Parent { get; set; }
 }

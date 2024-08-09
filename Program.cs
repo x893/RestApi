@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Identity.Client;
+using RestApi.Models;
 
 namespace RestApi
 {
